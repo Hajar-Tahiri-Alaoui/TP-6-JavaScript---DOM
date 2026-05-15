@@ -1,0 +1,33 @@
+function addTask(type) {
+    let input = document.getElementById('input-' + type);
+    let list = document.getElementById('list-' + type);
+    let dateInput = document.getElementById(' user-date');
+    if (input.value === "" || dateInput.value === "")  {
+        window.alert("Please select a date first !");
+        return;
+    }
+    let li = document.createElement(' li');
+    let span = document.createElement('span');
+    span.innerHTML = input.value + " (" + dateInput.value + ")" ;
+    let btnDone = document.createElement('button');
+    btnDone.innerHTML = "Done";
+    btnDone.style.backgroundColor = "#7a9e7c";
+    btnDone.onclick = function() { 
+        span.setAttribute('class', ' completed'); 
+    };
+    let btnDelete = document.createElement ('button');
+    btnDelete.innerHTML = "Delete";
+    btnDelete.style.backgroundColor = "#c97d7d";
+    btnDelete.style.marginLeft = "5px";
+    btnDelete.onclick = function() { 
+        list.removeChild(li); 
+    };
+    let div = document.createElement('div');
+    div.appendChild(btnDone);
+    div.appendChild(btnDelete);
+    li.appendChild(span) ;
+    li.appendChild(div);
+    list.appendChild(li);
+
+    input.value = "";
+}

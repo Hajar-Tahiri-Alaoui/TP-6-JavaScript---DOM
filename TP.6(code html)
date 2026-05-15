@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="UTF-8">
+    <title>to-do list</title>
+    <link rel="stylesheet" href="ex02.css">
+</head>
+<body>
+    <div id="main-container">
+        <h1 id="header">TO-DO LIST</h1>
+        
+        <div class="date-selection">
+            <label for="user-date">Date:</label>
+            <input type="date" id="user-date">
+        </div>
+
+        <div class="section pink">
+            <h2>MUST DO</h2>
+            <div class="input-group">
+                <input type="text" id="input-must" placeholder="Add urgent task...">
+                <button onclick="addTask('must')">ADD</button>
+            </div>
+            <ul id="list-must"></ul>
+        </div>
+
+        <div class="section beige">
+            <h2>SHOULD DO</h2>
+            <div class="input-group">
+                <input type="text" id="input-should" placeholder="Add important task...">
+                <button onclick="addTask('should')">ADD</button>
+            </div>
+            <ul id="list-should"></ul>
+        </div>
+
+        <div class="section blue">
+            <h2>COULD DO </h2>
+            <div class="input-group">
+                <input type="text" id="input-could" placeholder="Add minor task...">
+                <button onclick="addTask('could')">ADD</button>
+            </div>
+            <ul id="list-could"></ul>
+        </div>
+        <div class="section purple">
+            <h2> IF I HAVE TIME </h2>
+            <div class="input-group">
+                <input type="text" id="input-time" placeholder="Add task for later...">
+                <button onclick="addTask('time')">ADD</button>
+            </div>
+            <ul id="list-time"></ul>
+        </div>
+    </div>
+    <script src="script02.js"></script>
+</body>
+</html>
